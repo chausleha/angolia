@@ -1,1 +1,69 @@
-<p>home works!</p>
+<div class="default light">
+<div class="container">
+<header class="SearchHeader container">
+  <div class="SearchHeader_search">
+    <span class="SearchHeader_logo">
+      <a href="https://news.ycombinator.com">
+        <img src="//d1sz9gun5ag95e.cloudfront.net/packs/media/images/logo-hn-search-a822432b.png">
+      </a>
+      <a href="/">
+        <div class="SearchHeader_label">
+          Search <br> Hacker News
+        </div>
+      </a>
+    </span>
+
+    <div class="SearchHeader_container">
+      <span class="SearchIcon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </span>
+      <input  type="search" placeholder="Search stories by title, url or author" class="SearchInput" value="">
+
+    </div>
+    <div class="SearchHeader_settings"></div>
+  </div>
+</header>
+
+
+<section class="SearchResults">
+
+
+
+
+
+
+<div class=" SearchFilters container " *ngFor="let post of posts">
+  <div class="post">
+
+<div>{{post.title}}
+  <a>{{post.url}} </a>
+</div>
+
+    <div>
+    <span>{{post.points}}</span>
+    <span>{{post.author}}</span>
+    <span>{{post.created_at}}</span>
+    <span>{{post.num_comments}}</span>
+    </div>
+
+
+    <div>
+
+</div>
+
+  </div>
+
+
+
+
+  </div>
+
+
+
+</section>
+
+</div>
+</div>

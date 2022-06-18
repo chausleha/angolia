@@ -1,0 +1,145 @@
+.SearchFilters {
+  color: #000;
+  z-index: 10;
+  height: 42px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 0 8px;
+  background-color: #f6f6ef;
+}
+
+@media screen and (min-width: 1200px) {
+.container {
+  width: calc(85% - 10px);
+  margin: 0 auto;
+}
+}
+.default .SearchFilters.container, .default .SearchHeader.container {
+  width: 100%!important;
+}
+
+
+
+.SearchHeader_search {
+  height: 60px !important;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #ff742b;
+  height: auto;
+  padding: 4px;
+  position: relative;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.SearchHeader_logo {
+
+
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.SearchHeader_label {
+  color: #000;
+  font-size: 18px;
+  line-height: 1;
+}
+
+html {
+  color: #000;
+  font-family: Verdana,Geneva,sans-serif;
+}
+
+.SearchHeader .SearchIcon {
+  position: absolute;
+  top: 20px;
+  left: 250px;
+  color: #ff742b;
+  font-size: 24px;
+  pointer-events: none;
+}
+
+.SearchHeader .SearchInput {
+  border-radius: 0;
+  border: none;
+  height: 42px;
+  width: 100%;
+  box-shadow: none;
+  padding: 16px 144px 16px 54px;
+  font-weight: 300;
+  background-color: #fff;
+  color: rgba(0,0,0,.75);
+}
+
+input[type=search], input[type=text] {
+  -webkit-appearance: none;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+input[type="search" i] {
+  appearance: auto;
+  box-sizing: border-box;
+  padding: 1px 2px;
+}
+
+input {
+  writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+  padding: 1px 2px;
+  border-width: 2px;
+  border-style: inset;
+  border-image: initial;
+}
+
+.SearchHeader_container {
+  height: 42px;
+  max-width: 1063px;
+  width: 100%;
+}
+
+img {
+  width: 48px;
+  height: 48px;
+}
+
+.SearchResults {
+  position: relative;
+  background: #f6f6ef;
+  min-height: calc(100vh - 120px);
+}
