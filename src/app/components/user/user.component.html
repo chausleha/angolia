@@ -1,1 +1,23 @@
-<p>user works!</p>
+
+<table id="hnmain">
+  <tbody bgcolor="#f6f6ef">
+  <tr >
+    <td >user:</td>
+    <td  >{{user.username}}</td>
+  </tr>
+  <tr >
+    <td >created:</td>
+    <td  >{{user.created_at | date: 'MMMM d, y'}}</td>
+  </tr>
+  <tr >
+    <td >karma:</td>
+    <td >{{user.karma}}</td>
+  </tr>
+  <tr>
+    <td>about:</td>
+    <td >{{user.about}}</td>
+  </tr>
+  </tbody>
+</table>
+
+
