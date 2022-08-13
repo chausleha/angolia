@@ -9,7 +9,7 @@ table {
   border-left-width: 0px;
   -webkit-border-horizontal-spacing: 0px;
   -webkit-border-vertical-spacing: 0px;
-  width: 85%;
+
   background-color: rgb(246, 246, 239);
 }
 table {
@@ -33,6 +33,12 @@ center {
   text-align: -webkit-center;
 }
 body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: #828282;
+}
+
+td {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 10pt;
   color: #828282;

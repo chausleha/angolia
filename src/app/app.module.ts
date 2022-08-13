@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import { DateAgoPipe } from './pipe/date-ago.pipe';
+import {SharedModule} from "primeng/api";
+import {CardModule} from "primeng/card";
+import { HeaderSmallComponent } from './components/header-small/header-small.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,17 @@ import { DateAgoPipe } from './pipe/date-ago.pipe';
     PostComponent,
     UserComponent,
     DateAgoPipe,
+    HeaderSmallComponent,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
+    CardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

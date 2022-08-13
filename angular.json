@@ -28,7 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/primeng/resources/primeng.css",
+              "node_modules/primeflex/primeflex.css"
             ],
             "scripts": []
           },

@@ -1,1 +1,8 @@
 <p>post works!</p>
+<div>{{post.title}}</div>
+<div>{{post.url}}</div>
+<div>{{post.points}} points by {{post.author}} on {{post.created_at | date:'longDate'}}</div>
+
+<ng-template *ngFor="let comment of comments">
+
+</ng-template>
