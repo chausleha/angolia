@@ -1,8 +1,22 @@
-<p>post works!</p>
-<div>{{post.title}}</div>
-<div>{{post.url}}</div>
-<div>{{post.points}} points by {{post.author}} on {{post.created_at | date:'longDate'}}</div>
+<div>
+<span>{{post.title}} </span>
+  <span>({{post.url}})</span>
+</div>
+<div>
+  <span>{{post.points}} points by {{post.author}} on {{post.created_at | date:'longDate'}}</span>
+</div>
 
-<ng-template *ngFor="let comment of comments">
+<div></div>
+<ng-container *ngFor="let comment of post.children , let i = index">
+  <div>{{comment.author || "anonim" }} on {{comment.created_at | date:'longDate'}}
+    <span class="Story_separator" >|</span>
+    <span>next</span>
+    <span (click)="IsVisibleChild()" style="cursor: pointer">{{isVisibleChild ? '[–]' : '[+]'}}</span>
+  </div>
+  <div style="color: green">{{comment.text}}</div>
 
-</ng-template>
+  <ng-container *ngFor="let children of comment.children">
+    <div style="color: red">{{children.text}}</div>
+  </ng-container>
+</ng-container>
+

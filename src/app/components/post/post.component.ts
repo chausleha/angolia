@@ -9,7 +9,8 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class PostComponent implements OnInit {
   post: any = '';
-  comments = [] ;
+  comments : any = [] ;
+  public isVisibleChild = true;
   constructor(private pageService: PageService, private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -23,8 +24,10 @@ export class PostComponent implements OnInit {
       .subscribe(response => {
         this.post = response;
         this.comments = response.children;
-        console.log(this.comments)
       })
   }
 
+  IsVisibleChild() {
+    this.isVisibleChild = !this.isVisibleChild;
+  }
 }
