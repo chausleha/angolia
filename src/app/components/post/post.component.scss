@@ -1,0 +1,33 @@
+.text-comment {
+  color: #828282;
+
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: calc(85% - 10px);
+    margin: 0 auto;
+    background-color: #f6f6ef;
+
+  }
+}
+.comment-child-1 {
+  padding-left: 30px !important;
+
+}
+
+.comment-child-2 {
+ padding-left: 60px !important;
+}
+.comment-child-3 {
+ padding-left: 90px !important;
+}
+
+.comment-child-4 {
+  padding-left: 120px !important;
+}
+
+.comment-child-5 {
+  padding-left: 150px !important;
+}
+
