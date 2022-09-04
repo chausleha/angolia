@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPages();
+   /* this.getSearch('pg')*/
   }
 
   getPages() {
@@ -22,5 +23,11 @@ export class HomeComponent implements OnInit {
       })
   }
 
+  getSearch(parametrs:any) {
+    this.pageService.getSearchByАuthor(parametrs)
+      .subscribe(response => {
+        this.posts = response.hits;
+      })
+  }
 
 }

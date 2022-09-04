@@ -1,22 +1,23 @@
 <div class="container">
   <app-header-small></app-header-small>
+  <div class="author-post" >
 <span>
   <a href="{{post.url}}" class="titlelink text-comment">{{post.title}} </a>
   </span>
   <span class="text-comment">({{post.url}})</span>
 
-<div style="padding-bottom: 30px">
+<div >
   <span class="text-comment">{{post.points}} points by {{post.author}} on {{post.created_at | date:'longDate'}}</span>
 </div>
-
+  </div>
 
 <ng-container *ngFor="let comment of post.children , let i = index">
   <div class="comment-child-1">
   <span class="text-comment">{{i+1}}</span>
   <div class="text-comment">{{comment.author || "anonim" }} on {{comment.created_at | date:'longDate'}}
-    <span class="Story_separator" >| </span>
+   <!-- <span class="Story_separator" >| </span>
     <span>next </span>
-    <span (click)="IsVisibleChild()" style="cursor: pointer">{{isVisibleChild ? '[–]' : '[+]'}}</span>
+    <span (click)="IsVisibleChild()" style="cursor: pointer">{{isVisibleChild ? '[–]' : '[+]'}}</span>-->
   </div>
   <div class="black" [innerHTML]="comment.text"></div>
   </div>
@@ -24,9 +25,9 @@
     <div class="comment-child-2">
       <span class="text-comment">{{i+1}}.{{k+1}}</span>
     <div class="text-comment">{{children.author || "anonim" }} on {{children.created_at | date:'longDate'}}
-      <span class="Story_separator" >| </span>
+      <!--<span class="Story_separator" >| </span>
       <span>next </span>
-      <span (click)="IsVisibleChild()" style="cursor: pointer">{{isVisibleChild ? '[–]' : '[+]'}}</span>
+      <span (click)="IsVisibleChild()" style="cursor: pointer">{{isVisibleChild ? '[–]' : '[+]'}}</span>-->
     </div>
     <div [innerHTML]="children.text" ></div>
 </div>
@@ -34,9 +35,9 @@
       <div class="comment-child-3">
         <span class="text-comment">{{i+1}}.{{k+1}}.{{j+1}}</span>
         <div class="text-comment">{{children2.author || "anonim" }} on {{children2.created_at | date:'longDate'}}
-          <span class="Story_separator" >| </span>
+        <!--  <span class="Story_separator" >| </span>
           <span>next </span>
-          <span (click)="IsVisibleChild()" style="cursor: pointer">{{isVisibleChild ? '[–]' : '[+]'}}</span>
+          <span (click)="IsVisibleChild()" style="cursor: pointer">{{isVisibleChild ? '[–]' : '[+]'}}</span>-->
         </div>
       <div [innerHTML]="children2.text" ></div>
       </div>
@@ -44,9 +45,9 @@
         <div class="comment-child-4">
           <span class="text-comment">{{i+1}}.{{k+1}}.{{j+1}}.{{q+1}}</span>
           <div class="text-comment">{{children3.author || "anonim" }} on {{children3.created_at | date:'longDate'}}
-            <span class="Story_separator" >| </span>
+           <!-- <span class="Story_separator" >| </span>
             <span>next </span>
-            <span (click)="IsVisibleChild()" style="cursor: pointer">{{isVisibleChild ? '[–]' : '[+]'}}</span>
+            <span (click)="IsVisibleChild()" style="cursor: pointer">{{isVisibleChild ? '[–]' : '[+]'}}</span>-->
           </div>
         <div [innerHTML]="children3.text"></div>
         </div>
@@ -54,9 +55,9 @@
           <div class="comment-child-5">
             <span class="text-comment">{{i+1}}.{{k+1}}.{{j+1}}.{{q+1}}.{{w+1}}</span>
             <div class="text-comment">{{children4.author || "anonim" }} on {{children4.created_at | date:'longDate'}}
-              <span class="Story_separator" >| </span>
+            <!--  <span class="Story_separator" >| </span>
               <span>next </span>
-              <span (click)="IsVisibleChild()" style="cursor: pointer">{{isVisibleChild ? '[–]' : '[+]'}}</span>
+              <span (click)="IsVisibleChild()" style="cursor: pointer">{{isVisibleChild ? '[–]' : '[+]'}}</span>-->
             </div>
             <div [innerHTML]="children4.text"></div>
           </div>
