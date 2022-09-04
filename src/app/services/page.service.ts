@@ -25,14 +25,10 @@ export class PageService {
     return this.http.get<any>(`https://hn.algolia.com/api/v1/search?query=${parameter}`)
   }
 
-  getSortedByDate(parameter:string = '...'): Observable<any> {
+  getSearch(parameter:string = ''): Observable<any> {
     return this.http.get<any>(`http://hn.algolia.com/api/v1/search_by_date?query=${parameter}`)
   }
 
-
-  getSearchByАuthor(parameter:string = '...'): Observable<any> {
-    return this.http.get<any>(`http://hn.algolia.com/api/v1/search_by_date?tags=author_${parameter}`)
-  }
 
 
 }

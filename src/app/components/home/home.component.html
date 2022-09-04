@@ -21,7 +21,7 @@
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
       </span>
-      <input  type="search" placeholder="Search stories by title, url or author" class="SearchInput" value="">
+      <input  type="search" placeholder="Search stories by title, url or author" class="SearchInput" [ngModel]="title" (input)="onInput($event)" >
 
     </div>
     <div class="SearchHeader_settings"></div>
@@ -34,6 +34,7 @@
 
 
 <div class=" SearchFilters container " *ngFor="let post of posts">
+  <div *ngIf="!title, else titlepost">
   <article class="Story">
   <div class="Story_container">
     <div class="Story_data">
@@ -75,10 +76,61 @@
     </div>
   </div>
   </article>
-
-
-
   </div>
+
+
+    <ng-template #titlepost>
+    <article class="Story">
+      <div class="Story_container">
+        <div class="Story_data">
+
+          <div class="Story_title" *ngIf="post.story_url || post.story_title, else highlightResult" >
+            <a [routerLink]="['/item']" [queryParams]="{ id: post.objectID }" >{{post.story_title}}</a>
+            <a href="{{post.url}}" class="Story_link" target="_blank"> ({{post.story_url}}) </a>
+          </div>
+          <ng-template class="Story_title" #highlightResult>
+            <a [routerLink]="['/item']" [queryParams]="{ id: post.objectID }" [innerHTML]="post._highlightResult.title.value"></a>
+            <span> (</span>
+            <a href="{{post.url}}" class="Story_link" target="_blank" [innerHTML]="post._highlightResult.url.value"></a>
+            <span>)</span>
+          </ng-template>
+
+          <div class="Story_meta">
+    <span>
+      <a [routerLink]="['/item']" [queryParams]="{ id: post.objectID }">{{post.points}} points</a>
+    </span>
+            <span class="Story_separator">|</span>
+            <span>
+      <a>
+        <span>
+           <a [routerLink]="['/user/']" [queryParams]="{ id: post.author }"> {{post.author}}</a>
+        </span>
+      </a>
+     </span>
+
+            <span class="Story_separator">|</span>
+
+            <span>
+      <a [routerLink]="['/item']" [queryParams]="{ id: post.objectID }"> {{post.created_at | dateAgo}}</a>
+    </span>
+
+            <span class="Story_separator">|</span>
+            <span>
+       <a [routerLink]="['/item']" [queryParams]="{ id: post.objectID }">  {{post.num_comments}} comments</a>
+    </span>
+          </div>
+
+
+          <div>
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </ng-template>
+
+</div>
 
 
 

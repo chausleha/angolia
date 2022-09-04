@@ -8,12 +8,12 @@ import {PageService} from "../../services/page.service";
 })
 export class HomeComponent implements OnInit {
   posts: any = '';
-  parameter = '...';
+  title = '';
   constructor(private pageService: PageService) { }
 
   ngOnInit(): void {
     this.getPages();
-   /* this.getSearch('pg')*/
+
   }
 
   getPages() {
@@ -23,8 +23,22 @@ export class HomeComponent implements OnInit {
       })
   }
 
+  onInput(event:any) {
+    this.title = event.target.value
+    if (this.title) {
+      this.getSearch(this.title);
+    }
+    else {
+      this.getPages();
+    }
+
+
+
+  }
+
+
   getSearch(parametrs:any) {
-    this.pageService.getSearchByАuthor(parametrs)
+    this.pageService.getSearch(parametrs)
       .subscribe(response => {
         this.posts = response.hits;
       })
