@@ -13,6 +13,9 @@ import { DateAgoPipe } from './pipe/date-ago.pipe';
 import {SharedModule} from "primeng/api";
 import {CardModule} from "primeng/card";
 import { HeaderSmallComponent } from './components/header-small/header-small.component';
+import {DropdownModule} from "primeng/dropdown";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {PaginatorModule} from "primeng/paginator";
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { HeaderSmallComponent } from './components/header-small/header-small.com
     HttpClientModule,
     SharedModule,
     CardModule,
+    DropdownModule,
+    BrowserAnimationsModule,
+    PaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

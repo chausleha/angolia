@@ -28,6 +28,19 @@
   </div>
 </header>
 
+  <div class="header-search">
+    <span>Search</span>
+      <p-dropdown class="p-dropdown" [options]="search" [(ngModel)]="selected1" (ngModelChange)="onModelChange()" optionLabel="name"
+                  [showClear]="true"></p-dropdown>
+
+    <span>by</span>
+    <p-dropdown class="p-dropdown" [options]="by" [(ngModel)]="selected2" (ngModelChange)="onModelChange()"  optionLabel="name"
+                [showClear]="true"></p-dropdown>
+
+    <span class="result">{{home.nbHits}} results ({{home.processingTimeMS/1000}}  seconds)</span>
+  </div>
+
+
 
 <section class="SearchResults">
 
@@ -39,9 +52,9 @@
   <div class="Story_container">
     <div class="Story_data">
 
-<div class="Story_title" *ngIf="post.url || post.title" >
-  <a [routerLink]="['/item']" [queryParams]="{ id: post.objectID }">{{post.title}}</a>
-  <a href="{{post.url}}" class="Story_link" target="_blank"> ({{post.url}}) </a>
+<div class="Story_title" *ngIf="post.url || post.title || post.story_title " >
+  <a [routerLink]="['/item']" [queryParams]="{ id: post.objectID }">{{post.title || post.story_title }}</a>
+  <a href="{{post.url}}" class="Story_link" target="_blank"> ({{post.url || post.story_url}}) </a>
 </div>
 
     <div class="Story_meta">
@@ -138,3 +151,4 @@
 
 </div>
 </div>
+
