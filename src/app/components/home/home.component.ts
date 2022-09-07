@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {PageService} from "../../services/page.service";
 
 interface Select {
@@ -12,12 +12,14 @@ interface Select {
   styleUrls: ['./home.component.scss']
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   public posts: any = '';
   public home: any = '';
   public title = '';
   public selected1: Select = {name: 'All', code: ''};
   public selected2: Select = {name: 'Popularity', code: ''};
+  public page: number;
+
 
 
   public search: Select[] = [
@@ -31,52 +33,42 @@ export class HomeComponent implements OnInit {
   ];
 
   constructor(private pageService: PageService) {
+    this.page = 0;
   }
 
-  ngOnInit(): void {
-    this.getPages();
 
-
-  }
-
-  onModelChange() {
-    this.pageService.getSortedByRelevance(this.selected2.code, this.selected1.code)
+  onModelChange(parameter3?:number) {
+    this.pageService.getSortedByRelevance(this.selected2.code, this.selected1.code, parameter3)
       .subscribe(response => {
         this.home = response;
         this.posts = response.hits;
       })
-
       }
-
-
-  getPages() {
-    this.pageService.getPage()
-      .subscribe(response => {
-        this.home = response;
-        this.posts = response.hits;
-      })
-  }
 
   onInput(event:any) {
     this.title = event.target.value
     if (this.title) {
       this.getSearch(this.title);
+      return;
     }
-    else {
-      this.getPages();
-    }
-
-
-
+      this.onModelChange();
   }
 
 
-  getSearch(parametrs:any) {
-    this.pageService.getSearch(parametrs)
+  getSearch(parametrs1:any, parametrs2?:any) {
+    this.pageService.getSearch(parametrs1, parametrs2)
       .subscribe(response => {
         this.home = response;
         this.posts = response.hits;
       })
   }
 
+  paginate(event:any) {
+    if(this.title){
+      this.getSearch(this.title,event.page);
+      return;
+    }
+      this.onModelChange(event.page)
+
+  }
 }

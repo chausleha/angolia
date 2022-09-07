@@ -3,7 +3,7 @@
 <header class="SearchHeader container">
   <div class="SearchHeader_search">
     <span class="SearchHeader_logo">
-      <a href="https://news.ycombinator.com">
+      <a href="/">
         <img src="//d1sz9gun5ag95e.cloudfront.net/packs/media/images/logo-hn-search-a822432b.png">
       </a>
       <a href="/">
@@ -38,6 +38,7 @@
                 [showClear]="true"></p-dropdown>
 
     <span class="result">{{home.nbHits}} results ({{home.processingTimeMS/1000}}  seconds)</span>
+
   </div>
 
 
@@ -146,9 +147,15 @@
 </div>
 
 
-
+  <p-paginator [rows]="home.hitsPerPage"
+               [totalRecords]="home.nbHits"
+               [pageLinkSize]="6"
+               (onPageChange)="paginate($event)"
+  ></p-paginator>
 </section>
 
 </div>
+
 </div>
+
 

@@ -17,32 +17,14 @@ export class PageService {
     return this.http.get<any>(`http://hn.algolia.com/api/v1/users/${username}`)
   }
 
-  getPage(): Observable<any> {
-    return this.http.get<any>(`https://hn.algolia.com/api/v1/search`)
+
+  getSearch(parameter1:string = '', parameter2=0): Observable<any> {
+    return this.http.get<any>(`http://hn.algolia.com/api/v1/search_by_date?query=${parameter1}&page=${parameter2}`)
+  }
+
+  getSortedByRelevance(parameter1:string = '', parameter2:string = '', parameter3=0): Observable<any> {
+    return this.http.get<any>(`https://hn.algolia.com/api/v1/${parameter1}${parameter2}&page=${parameter3}`)
   }
 
 
-
-  getSearch(parameter:string = ''): Observable<any> {
-    return this.http.get<any>(`http://hn.algolia.com/api/v1/search_by_date?query=${parameter}`)
-  }
-
-  getSortedByRelevance(parameter1:string = '', parameter2:string = ''): Observable<any> {
-    return this.http.get<any>(`https://hn.algolia.com/api/v1/${parameter1}${parameter2}`)
-  }
-
-
-
-/*  https://hn.algolia.com/api/v1/search_by_date?tags=story сортировка историй
-
-    https://hn.algolia.com/api/v1/search_by_date?tags=comment сортировка комментариев
-
-    https://hn.algolia.com/api/v1/search_by_date? сортировка по дате
-    http://hn.algolia.com/api/v1/search? сортировка по релевантности
-
-    http://hn.algolia.com/api/v1/search?
-    http://hn.algolia.com/api/v1/search?tags=story
-    http://hn.algolia.com/api/v1/search?tags=comment
-
-  */
 }
