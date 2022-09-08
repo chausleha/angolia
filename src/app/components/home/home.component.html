@@ -30,11 +30,11 @@
 
   <div class="header-search">
     <span>Search</span>
-      <p-dropdown class="p-dropdown" [options]="search" [(ngModel)]="selected1" (ngModelChange)="onModelChange()" optionLabel="name"
+      <p-dropdown class="dropdown" [options]="search" [(ngModel)]="selected1" (ngModelChange)="onModelChange()" optionLabel="name"
                   [showClear]="true"></p-dropdown>
 
     <span>by</span>
-    <p-dropdown class="p-dropdown" [options]="by" [(ngModel)]="selected2" (ngModelChange)="onModelChange()"  optionLabel="name"
+    <p-dropdown class="dropdown" [options]="by" [(ngModel)]="selected2" (ngModelChange)="onModelChange()"  optionLabel="name"
                 [showClear]="true"></p-dropdown>
 
     <span class="result">{{home.nbHits}} results ({{home.processingTimeMS/1000}}  seconds)</span>
@@ -151,6 +151,7 @@
                [totalRecords]="home.nbHits"
                [pageLinkSize]="6"
                (onPageChange)="paginate($event)"
+               class="paginator"
   ></p-paginator>
 </section>
 
